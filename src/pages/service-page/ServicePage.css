@@ -7,9 +7,14 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
+    align-items: stretch
 }
 
 .company-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
     background: white;
     padding: 1.5rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -19,8 +24,52 @@ main {
     border-radius: 15px;
     border: 1px solid #e0e0e0;
 }
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 
 .company-card:hover {
     transform: translateY(-5px);
 }
 
+.card-image {
+    width: 100%;
+    height: auto;
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+
+.image-placeholder {
+  width: 100px;
+  height: 100px;
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.card-image.hidden {
+  display: none;
+}
+
+.card-image.visible {
+  display: block;
+}
+
+.company-card-link,
+.company-card-link > a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}

@@ -9,7 +9,6 @@
 }
 
 .header .nav-button {
-    background-color: transparent;
     border: 1px solid transparent;
     padding: 10px 20px;
     margin: 0 5px;
@@ -18,6 +17,7 @@
     text-decoration: none;
     color: #007bff;
     transition: background-color 0.3s, color 0.3s;
+    border-color: #c7c7dc;
 }
 
 .header .nav-button:hover {

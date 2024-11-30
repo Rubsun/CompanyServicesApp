@@ -1,0 +1,11 @@
+.pagination-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    z-index: 2;
+    margin: 0 700px 0 700px;
+}

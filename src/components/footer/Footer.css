@@ -1,14 +1,14 @@
-/* Общие стили для футера */
 .footer {
-    background-color: #f8f9fa; /* Цвет фона */
+    background-color: #f8f9fa;
     padding: 20px;
-    border-top: 1px solid #dee2e6; /* Линия над футером */
-    position: absolute;
+    border-top: 1px solid #dee2e6;
+    position: fixed;
     bottom: 0;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-
-/* Стили для контейнера контента футера */
 .footer .nav-button {
     background-color: transparent;
     border: 1px solid transparent;
@@ -17,32 +17,33 @@
     cursor: pointer;
     border-radius: 10px;
     text-decoration: none;
-    color: #007bff; /* Цвет текста */
+    color: #007bff;
     transition: background-color 0.3s, color 0.3s;
+    border-color: #c7c7dc;
+
 }
 
 .footer .nav-button:hover {
-    background-color: #e9ecef; /* Цвет фона при наведении */
-    color: #0056b3; /* Цвет текста при наведении */
+    background-color: #e9ecef;
+    color: #0056b3;
 }
 .footer .nav-button.active {
-    background-color: #007bff; /* Цвет фона активной кнопки */
-    color: #ffffff; /* Цвет текста активной кнопки */
-    border-color: #007bff; /* Цвет границы активной кнопки */
+    background-color: #007bff;
+    color: #ffffff;
+    border-color: #007bff;
 }
 
 .footer .nav-left,
 .footer .nav-right {
     display: flex;
-    gap: 10px; /* Отступы между кнопками */
+    gap: 10px;
 }
 
-/* Стили для текста в футере */
 .footer-text {
     margin: 0;
-    color: #6c757d; /* Цвет текста */
+    color: #6c757d;
 }
 
 .footer .nav-right {
-    margin-left: auto; /* Прижимаем контейнер справа */
+    margin-left: auto;
 }

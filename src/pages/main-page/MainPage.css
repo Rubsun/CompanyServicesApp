@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+
+.container {
+    gap: 15px
+}
+.main2 {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.message-box {
+    transition: transform 0.3s;
+
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 32px;
+}
+
+.message-box:hover {
+        transform: translateY(-5px);
+
+}
+
+.message-time {
+    text-align: right;
+    font-size: 0.8em;
+    color: #666;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
