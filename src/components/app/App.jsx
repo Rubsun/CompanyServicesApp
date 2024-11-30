@@ -1,13 +1,14 @@
 import React from 'react';
 import {presetGpnDefault, Theme} from '@consta/uikit/Theme';
 import {Responses404} from '@consta/uikit/Responses404';
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import MainPage from "../../pages/main-page/MainPage";
 import ServiceDetailPage from "../../pages/service-detail-page/ServiceDetailPage";
 import ServicePage from "../../pages/service-page/ServicePage";
 import Footer from "../footer/Footer";
 import Header from "../header/Header";
 import LoginPage from "../../pages/login-page/LoginPage";
+
 const App = function () {
     return (
         <Theme preset={presetGpnDefault}>
@@ -21,7 +22,7 @@ const App = function () {
                         <Route path='login' element={<LoginPage/>}></Route>
                         {/*<Route path={`${AppRoute.service}/:id`} element={<ServiceDetailPage/>}></Route>*/}
                     </Route>
-                    <Route path='*' element={<Responses404/>}></Route>
+                    <Route path='*' element={<div style={{marginTop: '200px'}}><Responses404/></div>}></Route>
                 </Routes>
                 <Footer/>
             </BrowserRouter>
