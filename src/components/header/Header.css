@@ -9,6 +9,8 @@
 }
 
 .header .nav-button {
+    all: unset;
+    display: inline-block;
     border: 1px solid transparent;
     padding: 10px 20px;
     margin: 0 5px;
@@ -18,7 +20,9 @@
     color: #007bff;
     transition: background-color 0.3s, color 0.3s;
     border-color: #c7c7dc;
+    text-align: center; /* Для выравнивания текста */
 }
+
 
 .header .nav-button:hover {
     background-color: #e9ecef;
@@ -30,6 +34,7 @@
     color: #ffffff;
     border-color: #007bff;
 }
+
 
 .header .nav-left,
 .header .nav-right {
