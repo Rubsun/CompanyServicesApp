@@ -8,6 +8,8 @@ import ServicePage from "../../pages/service-page/ServicePage";
 import Footer from "../footer/Footer";
 import Header from "../header/Header";
 import LoginPage from "../../pages/login-page/LoginPage";
+import ProfilePage from "../../pages/profile-page/ProfilePage";
+import ProtectedRoute from "../routing/ProtectedRouter";
 
 const App = function () {
     return (
@@ -15,22 +17,19 @@ const App = function () {
             <BrowserRouter>
                 <Header/>
                 <Routes>
-                    <Route path="/">
-                        <Route index element={<MainPage/>}></Route>
-                        <Route path="services" element={<ServicePage/>}></Route>
-                        <Route path='services/:id' element={<ServiceDetailPage/>}></Route>
-                        <Route path='login' element={<LoginPage/>}></Route>
-                        {/*<Route path={`${AppRoute.service}/:id`} element={<ServiceDetailPage/>}></Route>*/}
+                    <Route path="/" element={<MainPage/>}/>
+                    <Route element={<ProtectedRoute/>}>
+                        <Route path="services" element={<ServicePage/>}/>
+                        <Route path='services/:id' element={<ServiceDetailPage/>}/>
+                        <Route path='profile' element={<ProfilePage/>}/>
                     </Route>
-                    <Route path='*' element={<div style={{marginTop: '200px'}}><Responses404/></div>}></Route>
+                    <Route path='login' element={<LoginPage/>}/>
+                    <Route path='*' element={<div style={{marginTop: '200px'}}><Responses404/></div>}/>
                 </Routes>
                 <Footer/>
             </BrowserRouter>
         </Theme>
-
-
-    )
-}
-
+    );
+};
 
 export default App;
