@@ -21,7 +21,7 @@ const App = function () {
                     <Route element={<ProtectedRoute/>}>
                         <Route path="services" element={<ServicePage/>}/>
                         <Route path='services/:id' element={<ServiceDetailPage/>}/>
-                        <Route path='profile' element={<ProfilePage/>}/>
+                        <Route path='user/:id' element={<ProfilePage/>}/>
                     </Route>
                     <Route path='login' element={<LoginPage/>}/>
                     <Route path='*' element={<div style={{marginTop: '200px'}}><Responses404/></div>}/>
