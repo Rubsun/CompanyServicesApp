@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import './LoginPage.css';
 import {saveToken} from "../../services/token";
+import {saveProfileId} from "../../services/profile";
 
 const LoginPage = () => {
     const [username, setUsername] = useState('');
@@ -19,7 +20,7 @@ const LoginPage = () => {
                 body: JSON.stringify({
                     username,
                     password,
-                    expiresInMins: 30,
+                    expiresInMins: 100,
                 }),
             });
 
@@ -30,7 +31,14 @@ const LoginPage = () => {
             }
 
             const data = await response.json();
-            saveToken(data.token)
+            let accessToken = data['accessToken']
+            saveToken(accessToken)
+            const getMeResp = await fetch('https://dummyjson.com/auth/me', {
+                method: "GET",
+                headers: {'Authorization': `Bearer ${accessToken}`},
+            })
+            const userData = await getMeResp.json()
+            saveProfileId(userData)
             window.location.href = '/';
         } catch (error) {
             setError(error.message);
@@ -50,6 +58,7 @@ const LoginPage = () => {
                                 placeholder="User name / Email"
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
+                                required
                             />
                         </div>
                         <div className="login__field">
@@ -60,6 +69,7 @@ const LoginPage = () => {
                                 placeholder="Password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
+                                required
                             />
                         </div>
                         <button className="button login__submit" type="submit">
