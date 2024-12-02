@@ -1,0 +1,5 @@
+.photo-circle img {
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: black;
+}
