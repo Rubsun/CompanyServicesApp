@@ -9,11 +9,11 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer-left">
-                <NavLink to="/" className="nav-button" activeClassName="active">
+                <NavLink to="/" className={({ isActive }) => isActive ? "nav-button active" : "nav-button"}>
                     Главная страница
                 </NavLink>
                 {token && (
-                    <NavLink to="/services" className="nav-button" activeClassName="active">
+                    <NavLink to="/services" className={({ isActive }) => isActive ? "nav-button active" : "nav-button"}>
                         Услуги компании
                     </NavLink>
                 )}

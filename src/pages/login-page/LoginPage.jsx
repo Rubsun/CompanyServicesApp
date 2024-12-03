@@ -25,8 +25,6 @@ const LoginPage = () => {
             });
 
             if (!response.ok) {
-                console.log(response.status);
-                console.log(username, password);
                 throw new Error('Ошибка авторизации');
             }
 
